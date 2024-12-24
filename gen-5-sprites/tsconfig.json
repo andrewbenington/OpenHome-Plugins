@@ -1,13 +1,10 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "outDir": "out",
     "rootDir": ".",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "resolveJsonModule": true,
-    "lib": ["dom", "es2023"]
+    "listEmittedFiles": true
   },
-  "include": ["./**/*.ts", "./**/*.mts", "./*.ts"]
+  "include": ["./src/*.ts"]
 }

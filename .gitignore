@@ -30,3 +30,5 @@ generate/out/
 planning.md
 
 **/node_modules
+**/plugins.dev.json
+**/plugin.dev.json

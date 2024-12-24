@@ -1,5 +1,8 @@
 {
   "icon": "reshiram.png",
   "name": "Gen 5 Animated Sprites",
-  "id": "gen-5-sprites"
+  "id": "gen-5-sprites",
+  "assets": {
+    "assets": "assets.zip"
+  }
 }
