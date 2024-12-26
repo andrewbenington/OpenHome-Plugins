@@ -56778,7 +56778,7 @@ var buildPlugin = (() => {
       const formeData = speciesData.formes[formeNum];
       if (!formeData) return null;
       if (formeData.gen > 5) return null;
-      return `assets/${isShiny ? "shiny/" : ""}${formeData.formeName.toLowerCase()}.gif`;
+      return `assets/${isShiny ? "shiny/" : ""}${formeData.sprite}.gif`;
     }
   };
   return __toCommonJS(index_exports);
