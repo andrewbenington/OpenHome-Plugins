@@ -1,0 +1,8 @@
+{
+  "icon": "melmetal.png",
+  "name": "Let's Go Sprites",
+  "id": "lets-go-sprites",
+  "assets": {
+    "assets": "assets.zip"
+  }
+}
