@@ -59,7 +59,7 @@ export const plugin: SpritePlugin = {
     if (allFormesAllowed.includes(dexNum)) {
       return `assets/${
         isShiny ? "shiny/" : ""
-      }${formeData.formeName.toLowerCase()}.gif`;
+      }${formeData.formeName.toLowerCase()}.png`;
     }
 
     if (formeData.regional !== null && formeData.regional !== "Hisui") {

@@ -58059,7 +58059,7 @@ var buildPlugin = (() => {
       const formeData = speciesData.formes[formeNum];
       if (!formeData || formeData.gen > 8) return null;
       if (allFormesAllowed.includes(dexNum)) {
-        return `assets/${isShiny ? "shiny/" : ""}${formeData.formeName.toLowerCase()}.gif`;
+        return `assets/${isShiny ? "shiny/" : ""}${formeData.formeName.toLowerCase()}.png`;
       }
       if (formeData.regional !== null && formeData.regional !== "Hisui") {
         return null;
