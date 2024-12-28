@@ -1,0 +1,8 @@
+{
+  "icon": "xerneas.png",
+  "name": "Gen 6 Sprites",
+  "id": "gen-6-sprites",
+  "assets": {
+    "assets": "assets.zip"
+  }
+}
