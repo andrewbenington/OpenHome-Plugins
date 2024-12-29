@@ -2,15 +2,6 @@ import fs from "fs";
 import archiver from "archiver";
 import path from "path";
 
-type PluginMetadata = {
-  icon: string;
-  name: "Gen 6 Sprites";
-  id: "gen-6-sprites";
-  assets: {
-    assets: "assets.zip";
-  };
-};
-
 function zipDirectory(sourceDir, outPath) {
   const output = fs.createWriteStream(outPath);
   const archive = archiver("zip", { zlib: { level: 9 } }); // Sets the compression level
@@ -37,8 +28,6 @@ const pluginDirs = fs
       fs.statSync(p).isDirectory() && fs.existsSync(path.join(p, "plugin.json"))
   );
 
-for (const plugin in pluginDirs) {
+for (const plugin of pluginDirs) {
   zipDirectory(path.join(plugin, "assets"), path.join(plugin, "assets.zip"));
 }
-
-// zipDirectory("assets", "assets.zip");

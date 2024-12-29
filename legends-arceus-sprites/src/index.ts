@@ -1,4 +1,10 @@
-import { NationalDex, PokemonData } from "pokemon-species-data";
+import { Pokemon } from "pokemon-species-data";
+
+declare var PokemonData: {
+  readonly [key: number]: Pokemon;
+};
+
+declare var NationalDex: Record<string, number>;
 
 interface MonData {
   dexNum: number;

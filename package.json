@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "build": "node bundle.js && node compress.js",
+    "build": "npx tsx bundle && npx tsx compress",
     "compress": "node compress.js"
   },
   "author": "",
