@@ -1,8 +1,5 @@
 {
-  "icon": "arceus.png",
   "name": "Legends Arceus Sprites",
   "id": "legends-arceus-sprites",
-  "assets": {
-    "assets": "assets.zip"
-  }
+  "version": "0.1.0"
 }

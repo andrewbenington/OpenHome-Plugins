@@ -1,0 +1,25 @@
+{
+  "name": "openhome-plugins",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "build": "node bundle.js && node compress.js",
+    "compress": "node compress.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "devDependencies": {
+    "@types/archiver": "^6.0.3",
+    "@types/node": "^22.10.2",
+    "archiver": "^7.0.1",
+    "esbuild": "0.24.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "pokemon-files": "^0.3.5",
+    "pokemon-resources": "^1.0.10",
+    "pokemon-species-data": "^0.4.2"
+  }
+}

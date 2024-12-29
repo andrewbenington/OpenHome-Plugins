@@ -1,8 +1,5 @@
 {
-  "icon": "raichu-alola.png",
   "name": "Alola Dex Sprites (PK7)",
   "id": "alola-dex-sprites",
-  "assets": {
-    "assets": "assets.zip"
-  }
+  "version": "0.1.0"
 }

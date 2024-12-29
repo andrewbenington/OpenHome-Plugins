@@ -1,4 +1,8 @@
-import { PokemonData } from "pokemon-species-data";
+import { Pokemon } from "pokemon-species-data";
+
+declare var PokemonData: {
+  readonly [key: number]: Pokemon;
+};
 
 interface MonData {
   dexNum: number;
