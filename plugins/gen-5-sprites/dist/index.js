@@ -17,14 +17,23 @@ var buildPlugin = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // gen-5-sprites/src/index.ts
+  // plugins/gen-5-sprites/src/index.ts
   var index_exports = {};
   __export(index_exports, {
     plugin: () => plugin
   });
+
+  // plugins/gen-5-sprites/plugin.json
+  var plugin_default = {
+    name: "Gen 5 Animated Sprites",
+    id: "gen-5-sprites",
+    version: "0.1.0",
+    api_version: 1
+  };
+
+  // plugins/gen-5-sprites/src/index.ts
   var plugin = {
-    pluginName: "Gen 5 Animated Sprites",
-    pluginID: "gen-5-sprites",
+    ...plugin_default,
     getMonSpritePath: (params) => {
       const { dexNum, formeNum, format, isShiny } = params;
       if (format !== "PK5") return null;

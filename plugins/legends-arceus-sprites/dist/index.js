@@ -17,11 +17,21 @@ var buildPlugin = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // legends-arceus-sprites/src/index.ts
+  // plugins/legends-arceus-sprites/src/index.ts
   var index_exports = {};
   __export(index_exports, {
     plugin: () => plugin
   });
+
+  // plugins/legends-arceus-sprites/plugin.json
+  var plugin_default = {
+    name: "Legends Arceus Sprites",
+    id: "legends-arceus-sprites",
+    version: "0.1.0",
+    api_version: 1
+  };
+
+  // plugins/legends-arceus-sprites/src/index.ts
   var legendsDex = [
     25,
     26,
@@ -272,8 +282,7 @@ var buildPlugin = (() => {
     NationalDex.Sneasel
   ];
   var plugin = {
-    pluginName: "Legends Arceus Sprites",
-    pluginID: "legends-arceus-sprites",
+    ...plugin_default,
     getMonSpritePath: (params) => {
       const { dexNum, formeNum, format, isShiny } = params;
       if (format !== "PA8") return null;

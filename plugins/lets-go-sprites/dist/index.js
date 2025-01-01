@@ -17,14 +17,23 @@ var buildPlugin = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // lets-go-sprites/src/index.ts
+  // plugins/lets-go-sprites/src/index.ts
   var index_exports = {};
   __export(index_exports, {
     plugin: () => plugin
   });
+
+  // plugins/lets-go-sprites/plugin.json
+  var plugin_default = {
+    name: "Let's Go Sprites",
+    id: "lets-go-sprites",
+    version: "0.1.0",
+    api_version: 1
+  };
+
+  // plugins/lets-go-sprites/src/index.ts
   var plugin = {
-    pluginName: "Let's Go Sprites",
-    pluginID: "lets-go-sprites",
+    ...plugin_default,
     getMonSpritePath: (params) => {
       const { dexNum, formeNum, format, isShiny } = params;
       if (format !== "PB7") return null;

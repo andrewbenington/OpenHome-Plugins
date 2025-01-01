@@ -4,19 +4,21 @@ import esbuild from "esbuild";
 
 function buildPlugin(pluginName: string) {
   esbuild.build({
-    entryPoints: [`./${pluginName}/src/index.js`],
+    entryPoints: [`./plugins/${pluginName}/src/index.js`],
     bundle: true, // Bundles the code
-    outfile: `./${pluginName}/dist/index.js`, // Output bundled file
+    outfile: `./plugins/${pluginName}/dist/index.js`, // Output bundled file
     format: "iife", // IIFE format (to run directly in the browser)
     globalName: "buildPlugin", // This will be the global variable name
   });
 }
 
+console.log(fs.readdirSync("plugins"));
 const pluginDirs = fs
-  .readdirSync(".")
+  .readdirSync("plugins")
   .filter(
     (p) =>
-      fs.statSync(p).isDirectory() && fs.existsSync(path.join(p, "plugin.json"))
+      fs.statSync(path.join("plugins", p)).isDirectory() &&
+      fs.existsSync(path.join("plugins", p, "plugin.json"))
   );
 
 for (const plugin of pluginDirs) {

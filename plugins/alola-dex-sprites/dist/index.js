@@ -17,11 +17,21 @@ var buildPlugin = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // alola-dex-sprites/src/index.ts
+  // plugins/alola-dex-sprites/src/index.ts
   var index_exports = {};
   __export(index_exports, {
     plugin: () => plugin
   });
+
+  // plugins/alola-dex-sprites/plugin.json
+  var plugin_default = {
+    name: "Alola Dex Sprites (PK7)",
+    id: "alola-dex-sprites",
+    version: "0.1.0",
+    api_version: 1
+  };
+
+  // plugins/alola-dex-sprites/src/index.ts
   var alolaDex = [
     10,
     11,
@@ -428,8 +438,7 @@ var buildPlugin = (() => {
     807
   ];
   var plugin = {
-    pluginName: "Alola Dex Sprites (PK7)",
-    pluginID: "alola-dex-sprites",
+    ...plugin_default,
     getMonSpritePath: (params) => {
       const { dexNum, formeNum, format, isShiny } = params;
       if (format !== "PK7") return null;

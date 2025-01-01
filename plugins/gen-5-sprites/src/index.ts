@@ -1,4 +1,5 @@
 import { Pokemon } from "pokemon-species-data";
+import PluginMetadata from "../plugin.json";
 
 declare var PokemonData: {
   readonly [key: number]: Pokemon;
@@ -13,14 +14,15 @@ interface MonData {
 }
 
 interface SpritePlugin {
-  pluginName: string;
-  pluginID: string;
+  name: string;
+  id: string;
+  version: string;
+  api_version: number;
   getMonSpritePath: (params: MonData) => string | null;
 }
 
 export const plugin: SpritePlugin = {
-  pluginName: "Gen 5 Animated Sprites",
-  pluginID: "gen-5-sprites",
+  ...PluginMetadata,
   getMonSpritePath: (params: MonData) => {
     const { dexNum, formeNum, format, isShiny } = params;
 

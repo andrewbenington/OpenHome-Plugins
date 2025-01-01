@@ -17,14 +17,23 @@ var buildPlugin = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // gen-6-sprites/src/index.ts
+  // plugins/gen-6-sprites/src/index.ts
   var index_exports = {};
   __export(index_exports, {
     plugin: () => plugin
   });
+
+  // plugins/gen-6-sprites/plugin.json
+  var plugin_default = {
+    name: "Gen 6 Sprites",
+    id: "gen-6-sprites",
+    version: "0.1.0",
+    api_version: 1
+  };
+
+  // plugins/gen-6-sprites/src/index.ts
   var plugin = {
-    pluginName: "Gen 6 Sprites",
-    pluginID: "gen-6-sprites",
+    ...plugin_default,
     getMonSpritePath: (params) => {
       const { dexNum, formeNum, format, isShiny } = params;
       if (format !== "PK6") return null;

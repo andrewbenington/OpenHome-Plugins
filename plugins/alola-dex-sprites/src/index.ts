@@ -1,4 +1,5 @@
 import { Pokemon } from "pokemon-species-data";
+import PluginMetadata from "../plugin.json";
 
 declare var PokemonData: {
   readonly [key: number]: Pokemon;
@@ -13,8 +14,10 @@ interface MonData {
 }
 
 interface SpritePlugin {
-  pluginName: string;
-  pluginID: string;
+  name: string;
+  id: string;
+  version: string;
+  api_version: number;
   getMonSpritePath: (params: MonData) => string | null;
 }
 
@@ -48,8 +51,7 @@ const alolaDex = [
 ];
 
 export const plugin: SpritePlugin = {
-  pluginName: "Alola Dex Sprites (PK7)",
-  pluginID: "alola-dex-sprites",
+  ...PluginMetadata,
   getMonSpritePath: (params: MonData) => {
     const { dexNum, formeNum, format, isShiny } = params;
 

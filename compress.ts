@@ -22,12 +22,18 @@ function zipDirectory(sourceDir, outPath) {
 }
 
 const pluginDirs = fs
-  .readdirSync(".")
+  .readdirSync("plugins")
   .filter(
     (p) =>
-      fs.statSync(p).isDirectory() && fs.existsSync(path.join(p, "plugin.json"))
+      fs.statSync(path.join("plugins", p)).isDirectory() &&
+      fs.existsSync(path.join("plugins", p, "plugin.json"))
   );
+console.log(pluginDirs);
 
 for (const plugin of pluginDirs) {
-  zipDirectory(path.join(plugin, "assets"), path.join(plugin, "assets.zip"));
+  console.log("compressing", path.join("plugins", plugin, "assets"));
+  zipDirectory(
+    path.join("plugins", plugin, "assets"),
+    path.join("plugins", plugin, "assets.zip")
+  );
 }
