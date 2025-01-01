@@ -9,7 +9,7 @@ function zipDirectory(sourceDir, outPath) {
   return new Promise((resolve, reject) => {
     output.on("close", () => {
       console.log(
-        `Archive created successfully! Total size: ${archive.pointer()} bytes.`
+        `${outPath} created successfully! Total size: ${archive.pointer()} bytes.`
       );
     });
 
@@ -28,7 +28,6 @@ const pluginDirs = fs
       fs.statSync(path.join("plugins", p)).isDirectory() &&
       fs.existsSync(path.join("plugins", p, "plugin.json"))
   );
-console.log(pluginDirs);
 
 for (const plugin of pluginDirs) {
   console.log("compressing", path.join("plugins", plugin, "assets"));

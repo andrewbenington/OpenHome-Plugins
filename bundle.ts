@@ -12,7 +12,6 @@ function buildPlugin(pluginName: string) {
   });
 }
 
-console.log(fs.readdirSync("plugins"));
 const pluginDirs = fs
   .readdirSync("plugins")
   .filter(
