@@ -1,5 +1,6 @@
 {
   "name": "Gen 5 Animated Sprites",
   "id": "gen-5-sprites",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "api_version": 1
 }
