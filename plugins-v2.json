@@ -1,0 +1,10 @@
+{
+  "v2": {
+    "Gen 5 Animated Sprites": "https://raw.githubusercontent.com/andrewbenington/OpenHome-Plugins/refs/heads/main/plugins/gen-5-sprites",
+    "Legends Arceus Sprites": "https://raw.githubusercontent.com/andrewbenington/OpenHome-Plugins/refs/heads/main/plugins/legends-arceus-sprites",
+    "Let's Go Sprites": "https://raw.githubusercontent.com/andrewbenington/OpenHome-Plugins/refs/heads/main/plugins/lets-go-sprites",
+    "Gen 6 Sprites": "https://raw.githubusercontent.com/andrewbenington/OpenHome-Plugins/refs/heads/main/plugins/gen-6-sprites",
+    "Alola Dex Sprites (PK7)": "https://raw.githubusercontent.com/andrewbenington/OpenHome-Plugins/refs/heads/main/plugins/alola-dex-sprites",
+    "Sword/Shield Sprites": "https://raw.githubusercontent.com/andrewbenington/OpenHome-Plugins/refs/heads/main/plugins/swsh-sprites"
+  }
+}
