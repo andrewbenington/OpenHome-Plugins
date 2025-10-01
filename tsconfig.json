@@ -7,5 +7,5 @@
     "rootDir": ".",
     "listEmittedFiles": true
   },
-  "include": ["./**/*.ts"]
+  "include": ["./**/*.ts", "./types/pkmrs.d.ts"]
 }
