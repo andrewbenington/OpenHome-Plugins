@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2024"],
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "outDir": "out",
+    "rootDir": ".",
+    "listEmittedFiles": true,
+    "resolveJsonModule": true
+  },
+  "include": ["./src/*.ts", "../types/*.ts"]
+}
