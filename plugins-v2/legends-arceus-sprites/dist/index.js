@@ -27,7 +27,7 @@ var buildPlugin = (() => {
   var plugin_default = {
     name: "Legends Arceus Sprites",
     id: "legends-arceus-sprites",
-    version: "1.1.0",
+    version: "1.1.1",
     api_version: 2
   };
 
@@ -292,7 +292,7 @@ var buildPlugin = (() => {
       if (allFormesAllowed.includes(dexNum)) {
         return `assets/${isShiny ? "shiny/" : ""}${formeData.formeName.toLowerCase()}.png`;
       }
-      if (formeData.regional !== null && formeData.regional !== 8 /* Hisui */) {
+      if (formeData.regional !== void 0 && formeData.regional !== 8 /* Hisui */) {
         return null;
       }
       if (speciesData.formes.some((otherForme) => otherForme.regional === 8 /* Hisui */) && formeData.regional !== 8 /* Hisui */) {
