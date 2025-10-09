@@ -34,7 +34,7 @@ export const plugin: SpritePlugin = {
     if (!speciesData) return null
 
     const formeData = MetadataLookup(dexNum, formeNum)
-    if (!formeData || formeData.introduced > Generation.G5) return null
+    if (!formeData || formeData.introducedGen > Generation.G5) return null
 
     return `assets/${isShiny ? 'shiny/' : ''}${formeData.sprite}.gif`
   },

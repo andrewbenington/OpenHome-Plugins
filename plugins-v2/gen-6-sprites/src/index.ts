@@ -38,7 +38,7 @@ export const plugin: SpritePlugin = {
     if (!speciesData) return null
 
     const formeData = MetadataLookup(dexNum, formeNum)
-    if (!formeData || formeData.introduced > Generation.G6) return null
+    if (!formeData || formeData.introducedGen > Generation.G6) return null
 
     if (formeData.regional) return null
 

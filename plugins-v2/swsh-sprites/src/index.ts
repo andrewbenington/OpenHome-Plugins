@@ -1,5 +1,5 @@
 import type { FormeMetadata, SpeciesMetadata } from '../../../types/pkmrs.d.ts'
-import { Generation, Region } from '../../enums/pkmrs'
+import { Generation } from '../../enums/pkmrs'
 import PluginMetadata from '../plugin.json'
 
 declare function SpeciesLookup(national_dex: number): SpeciesMetadata | undefined
@@ -77,9 +77,9 @@ export const plugin: SpritePlugin = {
     const formeData = MetadataLookup(dexNum, formeNum)
     if (
       !formeData ||
-      formeData.introduced > Generation.G8 ||
+      formeData.introducedGen > Generation.G8 ||
       formeData.isMega ||
-      formeData.regional === Region.Hisui
+      formeData.regional === 'Hisui'
     )
       return null
 

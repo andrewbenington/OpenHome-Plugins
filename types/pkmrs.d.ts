@@ -1,76 +1,3 @@
-interface MonData {
-  dexNum: number
-  formeNum: number
-  format: string
-  isFemale?: boolean
-  isShiny?: boolean
-}
-
-export interface SpritePlugin {
-  name: string
-  id: string
-  version: string
-  api_version: number
-  getMonSpritePath: (params: MonData) => string | null
-}
-
-export class SpeciesMetadata {
-  private constructor()
-  free(): void
-  calculateLevel(exp: number): number
-  readonly name: string
-  readonly formes: FormeMetadata[]
-  readonly nationalDex: number
-  readonly levelUpType: string
-}
-
-export class FormeMetadata {
-  private constructor()
-  free(): void
-  abilityByNum(num: number): AbilityIndex
-  abilityByNumGen3(num: number): AbilityIndex
-  readonly nationalDex: NatDexIndex
-  readonly formeIndex: number
-  readonly isBaseForme: boolean
-  readonly isMega: boolean
-  readonly isGmax: boolean
-  readonly isBattleOnly: boolean
-  readonly isCosmetic: boolean
-  readonly genderRatio: GenderRatio
-  readonly baseStats: Stats16Le
-  readonly hiddenAbility: AbilityIndex | undefined
-  readonly baseHeight: number
-  readonly baseWeight: number
-  readonly preEvolution: SpeciesAndForme | undefined
-  readonly introduced: Generation
-  readonly isRestrictedLegend: boolean
-  readonly isSubLegend: boolean
-  readonly isMythical: boolean
-  readonly isUltraBeast: boolean
-  readonly isParadox: boolean
-  readonly regional: Region | undefined
-  readonly type1: string
-  readonly type1Index: number
-  readonly type2: string | undefined
-  readonly type2Index: number | undefined
-  readonly abilities: AbilityIndex[]
-  readonly eggGroups: string[]
-  readonly evolutions: SpeciesAndForme[]
-  readonly speciesName: string
-  readonly formeName: string
-  readonly sprite: string
-  readonly spriteCoords: Uint8Array
-}
-
-export class SpeciesAndForme {
-  private constructor()
-  free(): void
-  getMetadata(): FormeMetadata
-  static tryNew(national_dex: number, forme_index: number): SpeciesAndForme | undefined
-  readonly nationalDex: number
-  readonly formeIndex: number
-}
-
 export enum Ball {
   None = 0,
   Master = 1,
@@ -111,7 +38,6 @@ export enum Ball {
   Gigaton = 36,
   Origin = 37,
 }
-
 export enum EggGroup {
   Monster = 0,
   Fairy = 1,
@@ -129,14 +55,12 @@ export enum EggGroup {
   Ditto = 13,
   NoEggsDiscovered = 14,
 }
-
 export enum Gender {
   Male = 0,
   Female = 1,
   Genderless = 2,
   Invalid = 3,
 }
-
 export enum GenderRatio {
   Genderless = 0,
   AllMale = 1,
@@ -147,20 +71,18 @@ export enum GenderRatio {
   M3ToF1 = 6,
   M7ToF1 = 7,
 }
-
 export enum Generation {
-  G1 = 0,
-  G2 = 1,
-  G3 = 2,
-  G4 = 3,
-  G5 = 4,
-  G6 = 5,
-  G7 = 6,
-  G8 = 7,
-  G9 = 8,
-  None = 9,
+  None = 0,
+  G1 = 1,
+  G2 = 2,
+  G3 = 3,
+  G4 = 4,
+  G5 = 5,
+  G6 = 6,
+  G7 = 7,
+  G8 = 8,
+  G9 = 9,
 }
-
 export enum Language {
   None = 0,
   Japanese = 1,
@@ -174,7 +96,6 @@ export enum Language {
   ChineseSimplified = 9,
   ChineseTraditional = 10,
 }
-
 export enum LevelUpType {
   MediumFast = 0,
   Erratic = 1,
@@ -183,13 +104,76 @@ export enum LevelUpType {
   Fast = 4,
   Slow = 5,
 }
-
 export enum MarkingValue {
   Unset = 0,
   Blue = 1,
   Red = 2,
 }
-
+export enum OriginGame {
+  Invalid0 = 0,
+  Sapphire = 1,
+  Ruby = 2,
+  Emerald = 3,
+  FireRed = 4,
+  LeafGreen = 5,
+  Invalid6 = 6,
+  HeartGold = 7,
+  SoulSilver = 8,
+  Invalid9 = 9,
+  Diamond = 10,
+  Pearl = 11,
+  Platinum = 12,
+  Invalid13 = 13,
+  Invalid14 = 14,
+  ColosseumXd = 15,
+  BattleRevolution = 16,
+  Invalid17 = 17,
+  Invalid18 = 18,
+  Invalid19 = 19,
+  White = 20,
+  Black = 21,
+  White2 = 22,
+  Black2 = 23,
+  X = 24,
+  Y = 25,
+  AlphaSapphire = 26,
+  OmegaRuby = 27,
+  Invalid28 = 28,
+  Invalid29 = 29,
+  Sun = 30,
+  Moon = 31,
+  UltraSun = 32,
+  UltraMoon = 33,
+  Go = 34,
+  Red = 35,
+  BlueGreen = 36,
+  BlueJpn = 37,
+  Yellow = 38,
+  Gold = 39,
+  Silver = 40,
+  Crystal = 41,
+  LetsGoPikachu = 42,
+  LetsGoEevee = 43,
+  Sword = 44,
+  Shield = 45,
+  Home = 46,
+  LegendsArceus = 47,
+  BrilliantDiamond = 48,
+  ShiningPearl = 49,
+  Scarlet = 50,
+  Violet = 51,
+}
+export enum OriginMark {
+  GameBoy = 0,
+  Pentagon = 1,
+  Alola = 2,
+  LetsGo = 3,
+  Galar = 4,
+  Hisui = 5,
+  Bdsp = 6,
+  Tera = 7,
+  Go = 8,
+}
 export enum PkmType {
   Normal = 0,
   Fighting = 1,
@@ -210,7 +194,6 @@ export enum PkmType {
   Dark = 16,
   Fairy = 17,
 }
-
 export enum Region {
   Kanto = 0,
   Johto = 1,
@@ -222,8 +205,8 @@ export enum Region {
   Galar = 7,
   Hisui = 8,
   Paldea = 9,
+  Orre = 10,
 }
-
 export class AbilityIndex {
   private constructor()
   free(): void
@@ -231,7 +214,6 @@ export class AbilityIndex {
   readonly index: number
   readonly name: string
 }
-
 export class ContestStats {
   free(): void
   constructor(
@@ -249,24 +231,155 @@ export class ContestStats {
   tough: number
   sheen: number
 }
-
+export class FormeMetadata {
+  private constructor()
+  free(): void
+  abilityByNum(num: number): AbilityIndex
+  abilityByNumGen3(num: number): AbilityIndex
+  genderFromAtkDv(atk_dv: number): Gender
+  genderFromPid(pid: number): Gender
+  isEvolutionOf(other: FormeMetadata): boolean
+  readonly nationalDex: NatDexIndex
+  readonly formeIndex: number
+  readonly isBaseForme: boolean
+  readonly isMega: boolean
+  readonly isGmax: boolean
+  readonly isBattleOnly: boolean
+  readonly isCosmetic: boolean
+  readonly genderRatio: GenderRatio
+  readonly baseStats: Stats16Le
+  readonly hiddenAbility: AbilityIndex | undefined
+  readonly baseHeight: number
+  readonly baseWeight: number
+  readonly preEvolution: SpeciesAndForme | undefined
+  readonly isRestrictedLegend: boolean
+  readonly isSubLegend: boolean
+  readonly isMythical: boolean
+  readonly isUltraBeast: boolean
+  readonly isParadox: boolean
+  readonly type1: string
+  readonly type1Index: number
+  readonly type2: string | undefined
+  readonly type2Index: number | undefined
+  readonly abilities: AbilityIndex[]
+  readonly eggGroups: string[]
+  readonly evolutions: SpeciesAndForme[]
+  readonly speciesName: string
+  readonly formeName: string
+  readonly introducedGen: Generation
+  readonly regional: string | undefined
+  readonly sprite: string
+  readonly spriteCoords: Uint8Array
+}
+export class Geolocation {
+  free(): void
+  constructor(region: number, country: number)
+  region: number
+  country: number
+}
+export class Geolocations {
+  free(): void
+  constructor(
+    geo1: Geolocation,
+    geo2: Geolocation,
+    geo3: Geolocation,
+    geo4: Geolocation,
+    geo5: Geolocation
+  )
+  0: Geolocation
+  1: Geolocation
+  2: Geolocation
+  3: Geolocation
+  4: Geolocation
+}
+export class HyperTraining {
+  free(): void
+  constructor(hp: boolean, atk: boolean, def: boolean, spa: boolean, spd: boolean, spe: boolean)
+  hp: boolean
+  atk: boolean
+  def: boolean
+  spa: boolean
+  spd: boolean
+  spe: boolean
+}
+export class Languages {
+  private constructor()
+  free(): void
+  static fromByteOrNone(value: number): Language
+  static fromByteOrNoneGcn(value: number): Language
+  static stringFromByte(value: number): string
+  static stringFromByteGcn(value: number): string
+  static toGcnByte(value: number): number
+}
+export class MarkingsSixShapes {
+  private constructor()
+  free(): void
+  circle: boolean
+  square: boolean
+  triangle: boolean
+  heart: boolean
+  star: boolean
+  diamond: boolean
+}
+export class MarkingsSixShapesColors {
+  free(): void
+  constructor(
+    circle?: string | null,
+    square?: string | null,
+    triangle?: string | null,
+    heart?: string | null,
+    star?: string | null,
+    diamond?: string | null
+  )
+  circle: MarkingValue
+  square: MarkingValue
+  triangle: MarkingValue
+  heart: MarkingValue
+  star: MarkingValue
+  diamond: MarkingValue
+}
 export class MoveSlot {
   private constructor()
   free(): void
 }
-
 export class NatDexIndex {
   free(): void
   constructor(val: number)
   readonly index: number
 }
-
 export class NatureIndex {
   free(): void
   constructor(val: number)
   readonly index: number
 }
-
+export class OriginGameIndex {
+  free(): void
+  constructor(val: number)
+  readonly index: number
+}
+export class OriginGameMetadata {
+  private constructor()
+  free(): void
+  generation: Generation
+  index: number
+  get gamecube_index(): number | undefined
+  set gamecube_index(value: number | null | undefined)
+  readonly name: string
+  readonly mark: string | undefined
+  readonly region: string | undefined
+  readonly logo: string | undefined
+}
+export class OriginGames {
+  private constructor()
+  free(): void
+  static gameName(value: number): string
+  static generation(value: number): Generation
+  static region(value: number): Region | undefined
+  static gamecubeIndex(value: number): number | undefined
+  static mark(value: number): OriginMark | undefined
+  static color(value: number): string
+  static logoPath(value: number): string | undefined
+}
 export class PokeDate {
   free(): void
   constructor(year: number, month: number, day: number)
@@ -275,7 +388,24 @@ export class PokeDate {
   month: number
   day: number
 }
-
+export class SpeciesAndForme {
+  private constructor()
+  free(): void
+  getSpeciesMetadata(): SpeciesMetadata
+  getMetadata(): FormeMetadata
+  static tryNew(national_dex: number, forme_index: number): SpeciesAndForme | undefined
+  readonly nationalDex: number
+  readonly formeIndex: number
+}
+export class SpeciesMetadata {
+  private constructor()
+  free(): void
+  calculateLevel(exp: number): number
+  readonly name: string
+  readonly formes: FormeMetadata[]
+  readonly nationalDex: number
+  readonly levelUpType: string
+}
 export class Stats16Le {
   free(): void
   constructor(hp: number, atk: number, def: number, spa: number, spd: number, spe: number)
@@ -286,7 +416,6 @@ export class Stats16Le {
   spd: number
   spe: number
 }
-
 export class Stats8 {
   free(): void
   constructor(hp: number, atk: number, def: number, spa: number, spd: number, spe: number)
@@ -297,7 +426,6 @@ export class Stats8 {
   spd: number
   spe: number
 }
-
 export class StatsPreSplit {
   private constructor()
   free(): void
@@ -307,7 +435,6 @@ export class StatsPreSplit {
   spc: number
   spe: number
 }
-
 export class TrainerMemory {
   free(): void
   constructor(intensity: number, memory: number, feeling: number, text_variable: number)

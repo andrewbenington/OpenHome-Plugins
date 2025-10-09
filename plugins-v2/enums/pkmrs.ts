@@ -76,16 +76,16 @@ export enum GenderRatio {
 }
 
 export enum Generation {
-  G1 = 0,
-  G2 = 1,
-  G3 = 2,
-  G4 = 3,
-  G5 = 4,
-  G6 = 5,
-  G7 = 6,
-  G8 = 7,
-  G9 = 8,
-  None = 9,
+  None = 0,
+  G1 = 1,
+  G2 = 2,
+  G3 = 3,
+  G4 = 4,
+  G5 = 5,
+  G6 = 6,
+  G7 = 7,
+  G8 = 8,
+  G9 = 9,
 }
 
 export enum Language {

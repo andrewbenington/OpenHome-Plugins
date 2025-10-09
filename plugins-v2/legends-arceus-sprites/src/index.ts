@@ -1,4 +1,4 @@
-import { FormeMetadata, Region, SpeciesMetadata } from '../../../types/pkmrs.d.js'
+import { FormeMetadata, SpeciesMetadata } from '../../../types/pkmrs.d.js'
 import { Generation } from '../../enums/pkmrs'
 import PluginMetadata from '../plugin.json'
 
@@ -58,19 +58,19 @@ export const plugin: SpritePlugin = {
     if (!speciesData) return null
 
     const formeData = MetadataLookup(dexNum, formeNum)
-    if (!formeData || formeData.introduced > Generation.G8) return null
+    if (!formeData || formeData.introducedGen > Generation.G8) return null
 
     if (allFormesAllowed.includes(dexNum)) {
       return `assets/${isShiny ? 'shiny/' : ''}${formeData.formeName.toLowerCase()}.png`
     }
 
-    if (formeData.regional !== undefined && formeData.regional !== Region.Hisui) {
+    if (formeData.regional !== undefined && formeData.regional !== 'Hisui') {
       return null
     }
 
     if (
-      speciesData.formes.some((otherForme) => otherForme.regional === Region.Hisui) &&
-      formeData.regional !== Region.Hisui
+      speciesData.formes.some((otherForme) => otherForme.regional === 'Hisui') &&
+      formeData.regional !== 'Hisui'
     ) {
       return null
     }

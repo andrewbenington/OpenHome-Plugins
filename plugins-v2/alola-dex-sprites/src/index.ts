@@ -1,4 +1,4 @@
-import { FormeMetadata, Generation, Region, SpeciesMetadata } from '../../../types/pkmrs.d.js'
+import { FormeMetadata, Generation, SpeciesMetadata } from '../../../types/pkmrs.d.js'
 import PluginMetadata from '../plugin.json'
 
 declare function SpeciesLookup(national_dex: number): SpeciesMetadata | undefined
@@ -61,9 +61,9 @@ export const plugin: SpritePlugin = {
     if (!speciesData) return null
 
     const formeData = MetadataLookup(dexNum, formeNum)
-    if (!formeData || formeData.introduced > Generation.G7) return null
+    if (!formeData || formeData.introducedGen > Generation.G7) return null
 
-    if (formeData.regional && formeData.regional !== Region.Alola) return null
+    if (formeData.regional && formeData.regional !== 'Alola') return null
 
     return `assets/${isShiny ? 'shiny/' : ''}${formeData.sprite}.png`
   },
