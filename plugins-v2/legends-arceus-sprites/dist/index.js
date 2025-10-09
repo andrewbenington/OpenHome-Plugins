@@ -27,7 +27,7 @@ var buildPlugin = (() => {
   var plugin_default = {
     name: "Legends Arceus Sprites",
     id: "legends-arceus-sprites",
-    version: "1.1.1",
+    version: "1.2.0",
     api_version: 2
   };
 
@@ -288,14 +288,14 @@ var buildPlugin = (() => {
       const speciesData = SpeciesLookup(dexNum);
       if (!speciesData) return null;
       const formeData = MetadataLookup(dexNum, formeNum);
-      if (!formeData || formeData.introduced > 7 /* G8 */) return null;
+      if (!formeData || formeData.introducedGen > 8 /* G8 */) return null;
       if (allFormesAllowed.includes(dexNum)) {
         return `assets/${isShiny ? "shiny/" : ""}${formeData.formeName.toLowerCase()}.png`;
       }
-      if (formeData.regional !== void 0 && formeData.regional !== 8 /* Hisui */) {
+      if (formeData.regional !== void 0 && formeData.regional !== "Hisui") {
         return null;
       }
-      if (speciesData.formes.some((otherForme) => otherForme.regional === 8 /* Hisui */) && formeData.regional !== 8 /* Hisui */) {
+      if (speciesData.formes.some((otherForme) => otherForme.regional === "Hisui") && formeData.regional !== "Hisui") {
         return null;
       }
       return `assets/${isShiny ? "shiny/" : ""}${formeData.sprite}.png`;

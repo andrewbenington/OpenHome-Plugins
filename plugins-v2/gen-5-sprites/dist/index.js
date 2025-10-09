@@ -27,7 +27,7 @@ var buildPlugin = (() => {
   var plugin_default = {
     name: "Gen 5 Animated Sprites",
     id: "gen-5-sprites",
-    version: "1.1.0",
+    version: "1.2.0",
     api_version: 2
   };
 
@@ -40,7 +40,7 @@ var buildPlugin = (() => {
       const speciesData = SpeciesLookup(dexNum);
       if (!speciesData) return null;
       const formeData = MetadataLookup(dexNum, formeNum);
-      if (!formeData || formeData.introduced > 4 /* G5 */) return null;
+      if (!formeData || formeData.introducedGen > 5 /* G5 */) return null;
       return `assets/${isShiny ? "shiny/" : ""}${formeData.sprite}.gif`;
     }
   };

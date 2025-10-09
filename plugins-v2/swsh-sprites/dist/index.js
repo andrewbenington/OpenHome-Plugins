@@ -27,7 +27,7 @@ var buildPlugin = (() => {
   var plugin_default = {
     name: "Sword/Shield Sprites",
     id: "swsh-sprites",
-    version: "1.1.0",
+    version: "1.2.0",
     api_version: 2
   };
 
@@ -708,7 +708,7 @@ var buildPlugin = (() => {
       const speciesData = SpeciesLookup(dexNum);
       if (!speciesData) return null;
       const formeData = MetadataLookup(dexNum, formeNum);
-      if (!formeData || formeData.introduced > 7 /* G8 */ || formeData.isMega || formeData.regional === 8 /* Hisui */)
+      if (!formeData || formeData.introducedGen > 8 /* G8 */ || formeData.isMega || formeData.regional === "Hisui")
         return null;
       return `assets/${isShiny ? "shiny/" : ""}${formeData.sprite}.png`;
     }

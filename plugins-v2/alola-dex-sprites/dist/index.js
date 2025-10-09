@@ -27,7 +27,7 @@ var buildPlugin = (() => {
   var plugin_default = {
     name: "Alola Dex Sprites (PK7)",
     id: "alola-dex-sprites",
-    version: "1.1.0",
+    version: "1.2.0",
     api_version: 2
   };
 
@@ -448,8 +448,8 @@ var buildPlugin = (() => {
       const speciesData = SpeciesLookup(dexNum);
       if (!speciesData) return null;
       const formeData = MetadataLookup(dexNum, formeNum);
-      if (!formeData || formeData.introduced > 6 /* G7 */) return null;
-      if (formeData.regional && formeData.regional !== 6 /* Alola */) return null;
+      if (!formeData || formeData.introducedGen > 7 /* G7 */) return null;
+      if (formeData.regional && formeData.regional !== "Alola") return null;
       return `assets/${isShiny ? "shiny/" : ""}${formeData.sprite}.png`;
     }
   };

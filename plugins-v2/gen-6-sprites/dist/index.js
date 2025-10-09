@@ -27,7 +27,7 @@ var buildPlugin = (() => {
   var plugin_default = {
     name: "Gen 6 Sprites",
     id: "gen-6-sprites",
-    version: "1.1.0",
+    version: "1.2.0",
     api_version: 2
   };
 
@@ -41,7 +41,7 @@ var buildPlugin = (() => {
       const speciesData = SpeciesLookup(dexNum);
       if (!speciesData) return null;
       const formeData = MetadataLookup(dexNum, formeNum);
-      if (!formeData || formeData.introduced > 5 /* G6 */) return null;
+      if (!formeData || formeData.introducedGen > 6 /* G6 */) return null;
       if (formeData.regional) return null;
       return `assets/${isShiny ? "shiny/" : ""}${formeData.sprite}.png`;
     }
