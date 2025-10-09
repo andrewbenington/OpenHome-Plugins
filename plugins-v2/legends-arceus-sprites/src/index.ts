@@ -64,7 +64,7 @@ export const plugin: SpritePlugin = {
       return `assets/${isShiny ? 'shiny/' : ''}${formeData.formeName.toLowerCase()}.png`
     }
 
-    if (formeData.regional !== null && formeData.regional !== Region.Hisui) {
+    if (formeData.regional !== undefined && formeData.regional !== Region.Hisui) {
       return null
     }
 
