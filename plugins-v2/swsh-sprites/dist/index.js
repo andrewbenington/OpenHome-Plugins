@@ -17,21 +17,21 @@ var buildPlugin = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // plugins/swsh-sprites/src/index.ts
+  // plugins-v2/swsh-sprites/src/index.ts
   var index_exports = {};
   __export(index_exports, {
     plugin: () => plugin
   });
 
-  // plugins/swsh-sprites/plugin.json
+  // plugins-v2/swsh-sprites/plugin.json
   var plugin_default = {
     name: "Sword/Shield Sprites",
     id: "swsh-sprites",
-    version: "0.1.0",
-    api_version: 1
+    version: "1.1.0",
+    api_version: 2
   };
 
-  // plugins/swsh-sprites/src/index.ts
+  // plugins-v2/swsh-sprites/src/index.ts
   var swsh_transferrable = [
     1,
     2,

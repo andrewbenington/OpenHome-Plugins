@@ -17,21 +17,21 @@ var buildPlugin = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // plugins/legends-arceus-sprites/src/index.ts
+  // plugins-v2/legends-arceus-sprites/src/index.ts
   var index_exports = {};
   __export(index_exports, {
     plugin: () => plugin
   });
 
-  // plugins/legends-arceus-sprites/plugin.json
+  // plugins-v2/legends-arceus-sprites/plugin.json
   var plugin_default = {
     name: "Legends Arceus Sprites",
     id: "legends-arceus-sprites",
-    version: "0.1.0",
-    api_version: 1
+    version: "1.1.0",
+    api_version: 2
   };
 
-  // plugins/legends-arceus-sprites/src/index.ts
+  // plugins-v2/legends-arceus-sprites/src/index.ts
   var legendsDex = [
     25,
     26,

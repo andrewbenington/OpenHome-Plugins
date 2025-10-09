@@ -4,8 +4,8 @@
     "module": "ES2022",
     "moduleResolution": "bundler",
     "outDir": "out",
-    "rootDir": ".",
+    "rootDir": "..",
     "listEmittedFiles": true
   },
-  "include": ["./src/*.ts"]
+  "include": ["./src/*.ts", "../enums/pkmrs.ts"]
 }

@@ -17,21 +17,21 @@ var buildPlugin = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // plugins/alola-dex-sprites/src/index.ts
+  // plugins-v2/alola-dex-sprites/src/index.ts
   var index_exports = {};
   __export(index_exports, {
     plugin: () => plugin
   });
 
-  // plugins/alola-dex-sprites/plugin.json
+  // plugins-v2/alola-dex-sprites/plugin.json
   var plugin_default = {
     name: "Alola Dex Sprites (PK7)",
     id: "alola-dex-sprites",
-    version: "0.1.0",
-    api_version: 1
+    version: "1.1.0",
+    api_version: 2
   };
 
-  // plugins/alola-dex-sprites/src/index.ts
+  // plugins-v2/alola-dex-sprites/src/index.ts
   var alolaDex = [
     10,
     11,

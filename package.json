@@ -36,6 +36,6 @@
     "pokemon-species-data": "^0.4.2"
   },
   "workspaces": [
-    "plugins/*"
+    "plugins-v2/*"
   ]
 }

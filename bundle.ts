@@ -1,25 +1,25 @@
-import fs from "fs";
-import path from "path";
-import esbuild from "esbuild";
+import esbuild from 'esbuild'
+import fs from 'fs'
+import path from 'path'
 
 function buildPlugin(pluginName: string) {
   esbuild.build({
-    entryPoints: [`./plugins/${pluginName}/src/index.js`],
+    entryPoints: [`./plugins-v2/${pluginName}/src/index.js`],
     bundle: true, // Bundles the code
-    outfile: `./plugins/${pluginName}/dist/index.js`, // Output bundled file
-    format: "iife", // IIFE format (to run directly in the browser)
-    globalName: "buildPlugin", // This will be the global variable name
-  });
+    outfile: `./plugins-v2/${pluginName}/dist/index.js`, // Output bundled file
+    format: 'iife', // IIFE format (to run directly in the browser)
+    globalName: 'buildPlugin', // This will be the global variable name
+  })
 }
 
 const pluginDirs = fs
-  .readdirSync("plugins")
+  .readdirSync('plugins')
   .filter(
     (p) =>
-      fs.statSync(path.join("plugins", p)).isDirectory() &&
-      fs.existsSync(path.join("plugins", p, "plugin.json"))
-  );
+      fs.statSync(path.join('plugins-v2', p)).isDirectory() &&
+      fs.existsSync(path.join('plugins-v2', p, 'plugin.json'))
+  )
 
 for (const plugin of pluginDirs) {
-  buildPlugin(plugin);
+  buildPlugin(plugin)
 }
