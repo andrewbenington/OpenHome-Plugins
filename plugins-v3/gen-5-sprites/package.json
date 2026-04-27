@@ -1,0 +1,19 @@
+{
+  "name": "@openhome-plugins/gen-5-sprites",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node bundle.js && node compress.js",
+    "compress": "node compress.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "pokemon-files": "^0.3.5",
+    "pokemon-resources": "^1.0.10",
+    "pokemon-species-data": "^0.4.2"
+  }
+}
