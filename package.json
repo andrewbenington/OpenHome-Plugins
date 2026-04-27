@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --write .",
-    "build": "npx tsx bundle && npx tsx compress",
+    "build": "API_VERSION=v3 npx tsx bundle && npx tsx compress",
     "compress": "node compress.js",
     "lint": "eslint src --max-warnings 0 --report-unused-disable-directives -c eslint.config.mjs --fix",
     "lint:ci": "eslint src --max-warnings 0 --report-unused-disable-directives -c eslint.config.mjs"
@@ -36,6 +36,6 @@
     "pokemon-species-data": "^0.4.2"
   },
   "workspaces": [
-    "plugins-v2/*"
+    "plugins-v3/*"
   ]
 }

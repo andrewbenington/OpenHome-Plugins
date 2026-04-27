@@ -1,4 +1,4 @@
-import { FormeMetadata, SpeciesMetadata } from '../../../types/pkmrs.d.js'
+import { FormeMetadata, SpeciesMetadata } from '../../../types/pkmrs.js'
 import { Generation } from '../../enums/pkmrs'
 import PluginMetadata from '../plugin.json'
 

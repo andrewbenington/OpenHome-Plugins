@@ -1,4 +1,4 @@
-import { FormeMetadata, Generation, SpeciesMetadata } from '../../../types/pkmrs.d.js'
+import { FormeMetadata, Generation, SpeciesMetadata } from '../../../types/pkmrs.js'
 import PluginMetadata from '../plugin.json'
 
 declare function SpeciesLookup(national_dex: number): SpeciesMetadata | undefined

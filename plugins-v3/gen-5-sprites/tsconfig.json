@@ -3,7 +3,7 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "outDir": "out",
-    "rootDir": ".",
+    "rootDir": "..",
     "listEmittedFiles": true
   },
   "include": ["./src/*.ts"]
